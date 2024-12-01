@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FileJson } from 'lucide-react'
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog'
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from './ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { toast } from 'sonner'
@@ -33,6 +33,7 @@ export const LoadJson = ({ loadJsonInput }: {
 			setIsOpen(false)
 			toast.success("JSON loaded successfully")
 		} catch (err) {
+			console.log(err)
 			toast.error("Failed to load JSON from URL")
 		} finally {
 			setLoading(false)

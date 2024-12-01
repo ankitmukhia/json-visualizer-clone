@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 const ReactJsonView = dynamic(() => import('react-json-view'))
 
 export const JsonViewer = ({ jsonInput, error }: {
-	jsonInput: Object | null
+	jsonInput: object | null
 	error: null | string
 }) => {
 	return <>

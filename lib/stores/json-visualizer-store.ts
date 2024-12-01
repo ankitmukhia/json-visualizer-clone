@@ -7,7 +7,7 @@ export type TabValue = "input" | "tree" | "grid" | "ai"
 type JSONState = {
   activeTab: TabValue
   jsonInput: string
-  jsonParsed: Object | null
+  jsonParsed: Object | null  
   error: null | string
   setActiveTab: (tab: TabValue) => void
   setJsonInput: (input: string) => void
@@ -20,9 +20,8 @@ const useJsonStoreBase = create<JSONState>()(
     (set) => ({
       activeTab: "input",
       jsonInput: "",
-      jsonParsed: Object,
+      jsonParsed: null,
       error: null,
-
       setActiveTab: (tab) => set({ activeTab: tab }),
       setJsonInput: (value) => set({ jsonInput: value }),
       setParsedJson: (value) => set({ jsonParsed: value }),

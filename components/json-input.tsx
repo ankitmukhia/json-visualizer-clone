@@ -1,4 +1,4 @@
-import { Clipboard, Copy, Code, X, FileJson } from 'lucide-react'
+import { Clipboard, Copy, Code, X } from 'lucide-react'
 import { LoadJson } from '@/components/load-json'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
@@ -15,6 +15,7 @@ export const JsonInput = ({ jsonInput, setJsonInput }: {
 			setJsonInput(clipboardVal);
 			toast.success("Json pasted successfully");
 		} catch (err) {
+			console.log(err)
 			toast.error("Faild to past from clipboard")
 		}
 	}
@@ -24,6 +25,7 @@ export const JsonInput = ({ jsonInput, setJsonInput }: {
 			await navigator.clipboard.writeText(jsonInput)
 			toast.success("Json copyed to Clipboard");
 		} catch (err) {
+			console.log(err)
 			toast.error("Faild to Copy from clipboard")
 		}
 	}
@@ -35,6 +37,7 @@ export const JsonInput = ({ jsonInput, setJsonInput }: {
 			setJsonInput(formatData)
 			toast.success("Formatted successfully")
 		} catch (err) {
+			console.log(err)
 			toast.error("Failed to format.")
 		}
 	}
@@ -45,7 +48,8 @@ export const JsonInput = ({ jsonInput, setJsonInput }: {
 			const compact = JSON.stringify(parsed);
 			setJsonInput(compact);
 			toast.success("Whitespace removed successfully");
-		} catch {
+		} catch (err) {
+			console.log(err)
 			toast.error("Invalid JSON: Unable to remove whitespace");
 		}
 	}
