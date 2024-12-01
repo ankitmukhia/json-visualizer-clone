@@ -7,6 +7,7 @@ import { JsonViewer } from '@/components/json-viewer'
 import { ModeToggle } from '@/components/mode-toggle'
 import { JsonInput } from '@/components/json-input'
 import { GridViewer } from '@/components/grid-viewer'
+import { AiViewer } from '@/components/ai-viewer'
 
 export const DisplayJson = () => {
 	const activeTab = useJsonVisuliazerStore.use.activeTab();
@@ -60,8 +61,12 @@ export const DisplayJson = () => {
 						<JsonViewer jsonInput={jsonParsed} error={error} />
 					</TabsContent>
 
-					<TabsContent value="Grid" className="flex-grow">
+					<TabsContent value="grid" className="flex-grow">
 						<GridViewer />
+					</TabsContent>
+
+					<TabsContent value="ai" className="flex-grow">
+						<AiViewer />
 					</TabsContent>
 				</div>
 			</div>
